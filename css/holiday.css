@@ -1,0 +1,537 @@
+body {
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    padding: 20px 0 10px 0 ;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: inline-flex;
+    gap: 50px;
+    align-items: center;
+    background-color: white;
+}
+header img {
+    width: 70px;
+    height: auto;
+}
+header div a {
+    text-decoration: none;
+    color: #333;
+}
+.logo {
+    margin-left: 250px;
+}
+header div {
+    transition: 0.5s;
+}
+header div:hover{
+    font-weight: 100;
+    transform: scale(1.05);
+} 
+
+
+.text {
+    font-size: 35px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.cherta {
+    width: 100%;
+    height: 2px;
+    border-radius: 10%;
+    background-color: #cacccf;
+    margin: 35px 0 35px 10px;
+}
+
+
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid #cacccf;
+    padding: 30px;
+    display: flex;
+}
+
+
+
+
+.cont_left {
+    width: 40%;
+}
+
+.calendar-container {
+    width: 100%; /* Увеличиваем ширину */
+    height: 400px; /* Увеличиваем высоту */
+    color: #666;
+}
+.party_text {
+    font-size: 1.5em;
+    margin: 0px 0 0px 20px;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.calendar-header .calendar-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Размер стрелок */
+    height: 30px; /* Размер стрелок */
+    border-radius: 0; /* Убираем круг у стрелок */
+    text-decoration: none;
+    color: black; /* Черный цвет стрелок */
+    background-color: transparent; /* Прозрачный фон для стрелок */
+    font-size: 1.5em; /* Увеличиваем размер стрелок */
+    transition: 0.3s;
+    filter: brightness(0%);
+}
+
+.calendar-header .calendar-arrow:hover {
+    color: #999; /* Более темный цвет при наведении */
+    filter: brightness(110%);
+}
+
+.calendar-header img {
+    width: 30px; /* Уменьшаем размер картинок */
+    height: 30px;
+}
+
+.calendar-title {
+    font-size: 1.0em; /* Уменьшаем размер заголовка */
+}
+
+.calendar-body {
+    padding: 15px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 1em; /* Увеличиваем размер шрифта */
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays div {
+    text-align: center;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Увеличиваем gap */
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.calendar-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Фиксированная ширина */
+    height: 50px; /* Фиксированная высота */
+    border-radius: 50%;
+    background-color: #f5f6fb; /* Светло-серый фон для доступных дат */
+    color: #666;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    font-size: 1.1em; /* Увеличиваем размер шрифта чисел */
+    box-sizing: border-box; /* Включаем border в ширину и высоту */
+}
+
+.calendar-date:hover {
+    background-color: white;
+    border: 2px solid rgb(255,71,24); /* Оранжевая окантовка при наведении */
+    width: 50px; /* Фиксированная ширина */
+    height: 50px; /* Фиксированная высота */
+}
+
+.calendar-date.selected {
+    background-color: white; /* Белый фон для выбранной даты */
+    border: 2px solid rgb(255,71,24); /* Оранжевая окантовка для выбранной даты */
+    color: rgb(255,71,24); /* Оранжевый текст для выбранной даты */
+    width: 50px; /* Фиксированная ширина */
+    height: 50px; /* Фиксированная высота */
+}
+
+.calendar-date.disabled {
+    background-color: #fcfcfe; /* Светло-серый фон для прошлых дат */
+    color: #cacccf; /* Более бледный цвет текста для прошлых дат */
+    cursor: default;
+}
+.calendar-date.disabled:hover {
+    background-color: #e0e0e0; /* Светло-серый фон для прошлых дат */
+    color: #bbb; /* Более бледный цвет текста для прошлых дат */
+    cursor: default;
+    border: none; /* убираем обводку  */
+}
+
+
+
+
+
+
+
+
+
+
+.time-selection {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+}
+.time-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 60px;
+}
+.time-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 74px;
+    height: 43px;
+    border-radius: 20px;
+    color: #cacccf;
+    border: 1px solid #cacccf;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.time-option:hover,
+.time-option.selected {
+    background-color: white;
+    border: 2px solid rgb(255,71,24);
+    color: rgb(255,71,24); /* Оранжевый цвет текста при выборе */
+}
+
+
+
+
+
+.children-selection {
+    margin: 70px 0 0 20px
+}
+.children-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.child-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.child-icon img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7; /* Сделаем иконки полупрозрачными по умолчанию */
+    transition: opacity 0.3s ease;
+    filter: brightness(50%);
+}
+.child-icon span {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #999;
+    margin-left: -3px;
+}
+/* Стиль для иконок при наведении */
+.child-icon:hover img,
+.child-icon.selected img {
+    opacity: 1;
+    filter: invert(47%) sepia(76%) saturate(3759%) hue-rotate(341deg) brightness(103%) contrast(98%);
+}
+/* Стиль для цифр при наведении */
+.child-icon:hover span,
+.child-icon.selected span {
+    color: rgb(255,71,24);
+}
+/* Стиль для выбранных иконок (и предыдущих) */
+.child-icon.active img {
+    opacity: 1;
+    filter: invert(47%) sepia(76%) saturate(3759%) hue-rotate(341deg) brightness(103%) contrast(98%);
+}
+.child-icon.active span {
+    color: rgb(255,71,24);
+}
+
+.children-input {
+    width: 122px;
+    height: 46px;
+    padding: 8px;
+    margin: 0 0 0 10px;
+    border: none; /* Убираем границы по умолчанию */
+    border-radius: 20px;
+    background-color: #e3e3e9b4;
+    color: #666;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    appearance: textfield; /* Убираем стрелочки в некоторых браузерах */
+    -moz-appearance: textfield; /* Для Firefox */
+    box-sizing: border-box;
+}
+
+/* Убираем стрелочки в Chrome, Safari, Edge, IE */
+.children-input::-webkit-outer-spin-button,
+.children-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.children-input:focus,
+.children-input:hover {
+    outline: none; /* Убираем обводку при фокусе */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+.adults-selection {
+    margin-top: 70px;
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.adults-options {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.adult-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 36px;
+    border-radius: 45%;
+    border: 1px solid #f0f0f0;
+    color: #666;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.adult-option:hover,
+.adult-option.selected {
+    background-color: white;
+    border: 2px solid rgb(255,71,24);
+    color: rgb(255,71,24);
+    width: 40px;
+    height: 36px;
+    box-sizing: border-box;
+}
+.adults-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.adults-input {
+    width: 122px;
+    height: 46px;
+    padding: 8px;
+    margin: 0 0 0 10px;
+    border: none; /* Убираем границы по умолчанию */
+    border-radius: 20px;
+    background-color: #e3e3e9b4;
+    color: #666;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    appearance: textfield; /* Убираем стрелочки в некоторых браузерах */
+    -moz-appearance: textfield; /* Для Firefox */
+    box-sizing: border-box;
+}
+.adults-input:focus,
+.adults-input:hover {
+    outline: none; /* Убираем обводку при фокусе */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.adults-input::-webkit-outer-spin-button,
+.adults-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
+.place{
+    width: 50%;
+    margin: 20px 0 0 20px;
+    float: right
+}
+.place img {
+    width: 100%;
+    filter: brightness(90%);
+    border-radius: 20px;
+}
+.name {
+    position: relative;
+    top: -90px;
+    left: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.service-button {
+    position: relative;
+    top: -75px;
+    left: 20px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 2px solid rgb(255,71,24);
+    background-color: transparent; /* Убираем фон */
+    color: rgb(255,71,24);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-button:hover,
+.service-button.selected {
+    background-color: rgb(255,71,24); /* Оранжевый фон при выборе и наведении */
+    color: white;
+}
+
+
+
+
+
+.organize-button-container {
+    text-align: center;
+    position: relative;
+    top: -110px;
+    left: 500px;
+}
+
+#organize-button {
+    padding: 22px 60px;
+    border-radius: 35px;
+    border: 2px solid rgb(255,71,24);
+    background-color: white;
+    color: rgb(255,71,24);
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#organize-button:hover {
+    background-color: rgb(255,71,24);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-color: #f5f6fb; 
+    padding: 20px;
+    box-sizing: border-box;
+    color: #c6c9d0; 
+    margin-top: 50px;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: top;
+    margin: 20px 0 0px 70px;
+    max-width: 1150px;
+}
+
+.footer-left {
+    width: 90px;
+    margin-left: 280px;
+}
+
+.footer-left img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    gap: 55px;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.footer-social {
+    display: inline-flex;
+    margin-left: 120px;
+    gap: 20px;
+}
+.footer-social p {
+    margin: 15px 0 5px 0;
+    font-size: 0.7em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    font-size: 0.6em;
+    line-height: 1.8;
+}

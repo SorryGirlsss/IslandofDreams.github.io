@@ -1,0 +1,641 @@
+body {
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    padding: 20px 0 10px 0 ;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: inline-flex;
+    gap: 50px;
+    align-items: center;
+    background-color: white;
+}
+header img {
+    width: 70px;
+    height: auto;
+}
+header div a {
+    text-decoration: none;
+    color: #333;
+}
+.logo {
+    margin-left: 250px;
+}
+header div {
+    transition: 0.5s;
+}
+header div:hover{
+    font-weight: 100;
+    transform: scale(1.05);
+} 
+
+
+.text {
+    font-size: 35px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+
+.slider-container {
+    width: 70%;              /* 80% от ширины родительского контейнера */
+    height: 640px;            /* Фиксированная высота */
+    margin: 20px auto;       /* Центрирование по горизонтали */
+    position: relative;       /* Для позиционирования стрелок и точек */
+    overflow: hidden;         /* Скрываем элементы, выходящие за границы */
+    border-radius: 20px;      /* Скругление углов */
+}
+
+.slider {
+    display: flex;            /* Выстраиваем слайды в ряд */
+    width: 800%;              /* Общая ширина всех слайдов (8 слайдов * 100%) */
+    height: 100%;             /* Высота слайдера */
+    transition: transform 0.5s ease-in-out; /* Плавная анимация */
+}
+
+.slide {
+    width: calc(100% / 8);   /* Ширина каждого слайда (100% / 8 слайдов) */
+    height: 100%;             /* Высота слайда */
+    flex-shrink: 0;          /* Запрещаем слайдам сжиматься */
+    display: flex;
+    justify-content: center;  /* Выравниваем содержимое по центру */
+    align-items: center;
+    font-size: 2em;            /* Размер текста (для placeholder'ов) */
+    color: #fff;             /* Цвет текста (для placeholder'ов) */
+    background-color: #333;   /* Цвет фона (для placeholder'ов) */
+    border-radius: 20px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стрелки */
+.slider-controls .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;          /* Размер стрелок */
+    color: white;          /* Белый цвет стрелок */
+    background-color: rgb(255,71,24); /* Оранжевый фон с прозрачностью */
+    padding: 10px;            /* Отступы внутри стрелок */
+    border-radius: 50%;       /* Круглая форма */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавная смена цвета */
+    width: 40px;
+    height: 40px;
+    text-align: center; 
+    align-items: center;    
+}
+
+.slider-controls .slider-arrow:hover {
+    background-color: rgb(255,71,24, 0.8); /* Более насыщенный оранжевый при наведении */
+}
+
+.slider-controls .prev {
+    left: 10px;              /* Положение слева */
+}
+
+.slider-controls .next {
+    right: 10px;             /* Положение справа */
+}
+.slider-arrow img {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%); /* Инвертирует цвета */
+    filter: brightness(300%); /* Делает цвета ярче */
+}
+
+/* Точки (свитчи) */
+.slider-controls .slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;            /* Выстраиваем точки в ряд */
+}
+
+.slider-controls .slider-dots .dot {
+    width: 9px;          /* Диаметр точки */
+    height: 9px;          /* Диаметр точки */
+    border-radius: 50%;       /* Круглая форма */
+    background-color: #bbb;   /* Светло-серый цвет */
+    margin: 0 5px;           /* Отступы между точками */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавная смена цвета */
+}
+
+.slider-controls .slider-dots .dot.active {
+    background-color: rgb(255,71,24); /* Темно-серый цвет для активной точки */
+}
+
+
+
+
+
+
+/* Общие стили */
+.slider-container-objects { /* ИЗМЕНЕНО */
+    width: 70%;
+    margin: 80px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Заголовок */
+.slider-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #333;
+}
+
+/* Элементы управления (стрелки) */
+.slider-controls-objects { /* ИЗМЕНЕНО */
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.slider-arrow-objects { /* ИЗМЕНЕНО */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+.slider-arrow-objects img {
+    width: 30px;
+    height: 30px;
+}
+.slider-arrow-objects:hover { /* ИЗМЕНЕНО */
+    background-color: #f0f0f0;
+}
+
+.slider-controls-objects .prev-objects { /* ИЗМЕНЕНО */
+    left: 10px;
+}
+
+.slider-controls-objects .next-objects { /* ИЗМЕНЕНО */
+    right: 10px;
+}
+
+/* Обертка слайдера */
+.slider-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Слайдер */
+.slider-objects { /* ИЗМЕНЕНО */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 700%; /* 7 слайдов * 100% * 2  (нужно чтоб сделать бесконечный)*/
+    gap: 10px;
+}
+
+/* Слайд */
+.slide-objects { /* ИЗМЕНЕНО */
+    width: 7%; /* 2 слайда на экране */
+    flex-shrink: 0;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+/* Стили для содержимого слайда (пример) */
+.slide-objects img { /* ИЗМЕНЕНО */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.slide-objects span { /* ИЗМЕНЕНО */
+    text-align: center;
+    margin-left: 20px;
+    max-width: 220px;
+    padding: 5px;
+    padding-left: 0;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 20px;
+}
+.slide-objects p { /* ИЗМЕНЕНО */
+    text-align: center;
+    margin-left: 20px;
+    max-width: 220px;
+    padding: 5px;
+    padding-left: 0;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 20px;
+}
+.slide-objects h3 { /* ИЗМЕНЕНО */
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 10px;
+    margin: 0 20px 20px 20px;
+}
+
+.slide-objects p { /* ИЗМЕНЕНО */
+    background-color: rgb(255,71,24);
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для нового слайдера */
+.slider-container-third {
+    width: 70%;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-controls-third {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.slider-arrow-third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.slider-arrow-third img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.slider-arrow-third:hover {
+    background-color: #f0f0f0;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slider-third {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 600%; /*6 слайдов * 4 показать =  12.5 % 8 свайпов = */
+    gap: 10px;
+}
+
+.slide-third {
+    width: 4%; /* Показываем 4 слайда */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.slide-third img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.slide-third span {
+    position: absolute;
+    top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    max-width: 220px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 0.7em;
+    color: #999;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.slide-third h3 {
+    font-size: 1.0em;
+    color: white;
+    margin: 0 20px 0px 20px;
+}
+
+.slide-third p {
+    color: white;
+    margin-top: 0px;
+    margin-left: 20px;
+    max-width: 220px;
+    padding: 5px;
+    padding-left: 0;
+    border-radius: 20px;
+    font-size: 0.7em;
+}
+
+
+
+
+
+
+
+
+
+
+.poster_cont {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 110px;
+}
+.poster { /* ИЗМЕНЕНО */
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+}
+
+.poster img { /* ИЗМЕНЕНО */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.poster_first {
+    width: 290px;
+    border-radius: 20px;
+    background-color: #f5f6fb;
+}
+.poster_first span { /* ИЗМЕНЕНО */
+    position: relative;
+    margin: 20px 0 0 20px;
+    top: -310px;
+    text-align: center;
+    max-width: 130px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.7em;
+    color: #999;
+}
+.poster_date {
+    width: 270px;
+    background-color: black;
+    margin-top: -5px;
+    padding: 20px 0 20px 20px;
+    font-size: 0.8em;
+    color: white;
+}
+.poster_first p { /* ИЗМЕНЕНО */
+    text-align: center;
+    margin-left: 20px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    color: rgb(255,71,24);
+    border: 2px solid rgb(255,71,24);
+    font-weight: 600;
+    padding: 7px 0px 7px 0px;
+    background-color: white;
+    max-width: 150px;
+}
+.poster_first h3 { /* ИЗМЕНЕНО */
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    margin: 20px 20px 20px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для нового слайдера четвертый*/
+.slider-container-fourth {
+    width: 70%;
+    margin: 90px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-controls-fourth {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.slider-arrow-fourth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.slider-arrow-fourth img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.slider-arrow-fourth:hover {
+    background-color: #f0f0f0;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slider-fourth {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 270%;
+    gap: 10px;
+}
+
+.slide-fourth {
+    width: 7%; /* 100% / 6 слайдов */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f6fb;
+}
+
+.slide-fourth img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+.poster_date_slide {
+    width: 270px;
+    background-color: black;
+    margin-top: -10px;
+    padding: 17px 0 17px 20px;
+    font-size: 0.6em;
+    color: white;
+}
+.slide-fourth h3 {
+    font-size: 0.7em;
+    margin: 15px 10px 15px 10px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-color: #f5f6fb; 
+    padding: 20px;
+    box-sizing: border-box;
+    color: #c6c9d0; 
+    margin-top: 50px;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: top;
+    margin: 20px 0 0px 70px;
+    max-width: 1150px;
+}
+
+.footer-left {
+    width: 90px;
+    margin-left: 280px;
+}
+
+.footer-left img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    gap: 55px;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.footer-social {
+    display: inline-flex;
+    margin-left: 120px;
+    gap: 20px;
+}
+.footer-social p {
+    margin: 15px 0 5px 0;
+    font-size: 0.7em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    font-size: 0.6em;
+    line-height: 1.8;
+}

@@ -1,0 +1,228 @@
+body {
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    padding: 20px 0 10px 0 ;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: inline-flex;
+    gap: 50px;
+    align-items: center;
+    background-color: white;
+}
+header img {
+    width: 70px;
+    height: auto;
+}
+header div a {
+    text-decoration: none;
+    color: #333;
+}
+.logo {
+    margin-left: 250px;
+}
+header div {
+    transition: 0.5s;
+}
+header div:hover{
+    font-weight: 100;
+    transform: scale(1.05);
+} 
+
+
+.text {
+    font-size: 35px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+
+.slider-container {
+    width: 70%;              /* 80% от ширины родительского контейнера */
+    height: 640px;            /* Фиксированная высота */
+    margin: 20px auto;       /* Центрирование по горизонтали */
+    position: relative;       /* Для позиционирования стрелок и точек */
+    overflow: hidden;         /* Скрываем элементы, выходящие за границы */
+    border-radius: 20px;      /* Скругление углов */
+}
+
+.slider {
+    display: flex;            /* Выстраиваем слайды в ряд */
+    width: 600%;              /* Общая ширина всех слайдов (8 слайдов * 100%) */
+    height: 100%;             /* Высота слайдера */
+    transition: transform 0.5s ease-in-out; /* Плавная анимация */
+}
+
+.slide {
+    width: calc(100% / 6);   /* Ширина каждого слайда (100% / 8 слайдов) */
+    height: 100%;             /* Высота слайда */
+    flex-shrink: 0;          /* Запрещаем слайдам сжиматься */
+    display: flex;
+    justify-content: center;  /* Выравниваем содержимое по центру */
+    align-items: center;
+    font-size: 2em;            /* Размер текста (для placeholder'ов) */
+    color: #fff;             /* Цвет текста (для placeholder'ов) */
+    background-color: #333;   /* Цвет фона (для placeholder'ов) */
+    border-radius: 20px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стрелки */
+.slider-controls .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;          /* Размер стрелок */
+    color: white;          /* Белый цвет стрелок */
+    background-color: rgb(255,71,24); /* Оранжевый фон с прозрачностью */
+    padding: 10px;            /* Отступы внутри стрелок */
+    border-radius: 50%;       /* Круглая форма */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавная смена цвета */
+    width: 40px;
+    height: 40px;
+    text-align: center; 
+    align-items: center;    
+}
+
+.slider-controls .slider-arrow:hover {
+    background-color: rgb(255,71,24, 0.8); /* Более насыщенный оранжевый при наведении */
+}
+
+.slider-controls .prev {
+    left: 10px;              /* Положение слева */
+}
+
+.slider-controls .next {
+    right: 10px;             /* Положение справа */
+}
+.slider-arrow img {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%); /* Инвертирует цвета */
+    filter: brightness(300%); /* Делает цвета ярче */
+}
+
+/* Точки (свитчи) */
+.slider-controls .slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;            /* Выстраиваем точки в ряд */
+}
+
+.slider-controls .slider-dots .dot {
+    width: 9px;          /* Диаметр точки */
+    height: 9px;          /* Диаметр точки */
+    border-radius: 50%;       /* Круглая форма */
+    background-color: #bbb;   /* Светло-серый цвет */
+    margin: 0 5px;           /* Отступы между точками */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавная смена цвета */
+}
+
+.slider-controls .slider-dots .dot.active {
+    background-color: rgb(255,71,24); /* Темно-серый цвет для активной точки */
+}
+
+
+
+
+
+
+.text_cont {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+
+
+
+
+
+
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-color: #f5f6fb; 
+    padding: 20px;
+    box-sizing: border-box;
+    color: #c6c9d0; 
+    margin-top: 50px;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: top;
+    margin: 20px 0 0px 70px;
+    max-width: 1150px;
+}
+
+.footer-left {
+    width: 90px;
+    margin-left: 280px;
+}
+
+.footer-left img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    gap: 55px;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.footer-social {
+    display: inline-flex;
+    margin-left: 120px;
+    gap: 20px;
+}
+.footer-social p {
+    margin: 15px 0 5px 0;
+    font-size: 0.7em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    font-size: 0.6em;
+    line-height: 1.8;
+}

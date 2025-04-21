@@ -1,0 +1,231 @@
+body {
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    padding: 20px 0 10px 0 ;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: inline-flex;
+    gap: 50px;
+    align-items: center;
+    background-color: white;
+}
+header img {
+    width: 70px;
+    height: auto;
+}
+header div a {
+    text-decoration: none;
+    color: #333;
+}
+.logo {
+    margin-left: 250px;
+}
+header div {
+    transition: 0.5s;
+}
+header div:hover{
+    font-weight: 100;
+    transform: scale(1.05);
+} 
+
+
+.text {
+    font-size: 35px;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.poster_cont {
+    width: 75%;
+    margin: 0 auto;
+}
+.poster { /* ИЗМЕНЕНО */
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    gap: 25px;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Слайдер */
+.slider-objects { /* ИЗМЕНЕНО */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* 7 слайдов * 100% * 2  (нужно чтоб сделать бесконечный)*/
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Слайд */
+.slide-objects { /* ИЗМЕНЕНО */
+    width: 32.3%; /* 2 слайда на экране */
+    flex-shrink: 0;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+/* Стили для содержимого слайда (пример) */
+.slide-objects img { /* ИЗМЕНЕНО */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.slide-objects span { /* ИЗМЕНЕНО */
+    text-align: center;
+    max-width: 140px;
+    padding: 10px;
+    padding-left: 0;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.8em;
+    color: #999;
+    display: block;
+    margin: 0 0 20px 20px;
+}
+.slide-objects p { /* ИЗМЕНЕНО */
+    text-align: center;
+    margin-left: 20px;
+    max-width: 220px;
+    padding: 5px;
+    padding-left: 0;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 20px;
+}
+.slide-objects div { /* ИЗМЕНЕНО */
+    font-size: 0.7em;
+    color: white;
+    margin: -15px 20px 20px 20px;
+    height: 20px;
+}
+
+.slide-objects p { /* ИЗМЕНЕНО */
+    background-color: rgb(255,71,24);
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: 100;
+    max-width: 140px;
+    padding: 10px;
+}
+.slide-objects nav {
+    position: relative;
+    top: -140px;
+    left: 20px;
+    text-align: center;
+    min-width: 150px;
+    max-width: 240px;
+    padding: 5px 0px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 0.7em;
+    color: #999;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-color: #f5f6fb; 
+    padding: 20px;
+    box-sizing: border-box;
+    color: #c6c9d0; 
+    margin-top: 50px;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: top;
+    margin: 20px 0 0px 70px;
+    max-width: 1150px;
+}
+
+.footer-left {
+    width: 90px;
+    margin-left: 280px;
+}
+
+.footer-left img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    gap: 55px;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.footer-social {
+    display: inline-flex;
+    margin-left: 120px;
+    gap: 20px;
+}
+.footer-social p {
+    margin: 15px 0 5px 0;
+    font-size: 0.7em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    font-size: 0.6em;
+    line-height: 1.8;
+}
