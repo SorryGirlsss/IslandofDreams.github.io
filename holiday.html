@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организовать</title>
+    <link rel="stylesheet" href="css/holiday.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <div class="objects"><a href="objects.html">Объекты</a></div>
+        <div class="about"><a href="about_us.html">Все о нас</a></div>
+        <div class="holiday"><a href="holiday.html">Организовать праздник 🥳</a></div>
+    </header>
+
+
+    <div class="text">
+        <p><b>Организовать праздник 🥳</b></p>
+    </div>
+
+
+    <div class="container">
+        <div class="cont_left">
+            <div class="party_text"><b>Дата праздника</b></div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <a href="#" class="calendar-arrow prev" onclick="previousMonth()"><img src="images/arrow_left.png" alt="Предыдущий"></a>
+                    <h2 class="calendar-title">Апрель 2025</h2>
+                    <a href="#" class="calendar-arrow next" onclick="nextMonth()"><img src="images/arrow_right.png" alt="Следующий"></a>
+                </div>
+                
+                <div class="calendar-body">
+                    <div class="calendar-weekdays">
+                        <div>ПН</div>
+                        <div>ВТ</div>
+                        <div>СР</div>
+                        <div>ЧТ</div>
+                        <div>ПТ</div>
+                        <div>СБ</div>
+                        <div>ВС</div>
+                    </div>
+                    <div class="calendar-dates">
+                        <div class="calendar-date disabled">31</div>
+                        <div class="calendar-date">1</div>
+                        <div class="calendar-date">2</div>
+                        <div class="calendar-date">3</div>
+                        <div class="calendar-date">4</div>
+                        <div class="calendar-date">5</div>
+                        <div class="calendar-date">6</div>
+                        <div class="calendar-date">7</div>
+                        <div class="calendar-date">8</div>
+                        <div class="calendar-date">9</div>
+                        <div class="calendar-date">10</div>
+                        <div class="calendar-date">11</div>
+                        <div class="calendar-date">12</div>
+                        <div class="calendar-date selected">13</div>
+                        <div class="calendar-date">14</div>
+                        <div class="calendar-date">15</div>
+                        <div class="calendar-date">16</div>
+                        <div class="calendar-date">17</div>
+                        <div class="calendar-date">18</div>
+                        <div class="calendar-date">19</div>
+                        <div class="calendar-date">20</div>
+                        <div class="calendar-date">21</div>
+                        <div class="calendar-date">22</div>
+                        <div class="calendar-date">23</div>
+                        <div class="calendar-date">24</div>
+                        <div class="calendar-date">25</div>
+                        <div class="calendar-date">26</div>
+                        <div class="calendar-date">27</div>
+                        <div class="calendar-date">28</div>
+                        <div class="calendar-date">29</div>
+                        <div class="calendar-date">30</div>
+                        <div class="calendar-date disabled">1</div>
+                        <div class="calendar-date disabled">2</div>
+                        <div class="calendar-date disabled">3</div>
+                        <div class="calendar-date disabled">4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cherta"></div>
+            <div class="party_text"><b>Время начала</b></div>
+
+            <div class="time-selection">
+                <div class="time-options">
+                    <div class="time-option" data-time="12:00">12:00</div>
+                    <div class="time-option" data-time="13:00">13:00</div>
+                    <div class="time-option" data-time="14:00">14:00</div>
+                    <div class="time-option" data-time="15:00">15:00</div>
+                    <div class="time-option" data-time="16:00">16:00</div>
+                    <div class="time-option" data-time="17:00">17:00</div>
+                </div>
+            </div>
+
+
+
+            <div class="cherta"></div>
+            <div class="party_text"><b>Количество детей</b></div>
+
+
+            <div class="children-selection">
+                <div class="children-icons">
+                    <div class="child-icon" data-count="1">
+                        <img src="images/baby_face.png" alt="1">
+                        <span>1</span>
+                    </div>
+                    <div class="child-icon" data-count="2">
+                        <img src="images/baby_face.png" alt="2">
+                        <span>2</span>
+                    </div>
+                    <div class="child-icon" data-count="3">
+                        <img src="images/baby_face.png" alt="3">
+                        <span>3</span>
+                    </div>
+                    <div class="child-icon" data-count="4">
+                        <img src="images/baby_face.png" alt="4">
+                        <span>4</span>
+                    </div>
+                    <div class="child-icon" data-count="5">
+                        <img src="images/baby_face.png" alt="5">
+                        <span>5</span>
+                    </div>
+                    <div class="child-icon" data-count="6">
+                        <img src="images/baby_face.png" alt="6">
+                        <span>6</span>
+                    </div>
+                    <input type="number" class="children-input" placeholder="" min="1" max="99">
+                </div>
+            </div>
+
+
+
+            <div class="cherta"></div>
+            <div class="party_text"><b>Сколько будет взрослых?</b></div>
+
+
+
+            <div class="adults-selection">
+                <div class="adults-options">
+                    <div class="adult-option" data-count="1">1</div>
+                    <div class="adult-option" data-count="2">2</div>
+                    <div class="adult-option" data-count="3">3</div>
+                    <div class="adult-option" data-count="4">4</div>
+                </div>
+                <input type="number" class="adults-input" placeholder="" min="1" max="99">
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="cont_right">
+            <div class="party_text" style="margin-left: 420px;"><b>Место проведения</b></div>
+
+            <div class="cont_gallery">
+                <div class="place">
+                    <img src="images/place1.png" alt="">
+                    <div class="name">Кафе "Hello Kitty"</div>
+                    <button class="service-button" data-service="animation">Выбрать</button>
+                </div>
+                <div class="place">
+                    <img src="images/place2.png" alt="" style="margin-top: -60px;">
+                    <div class="name">Лаунж Остров Мечты (от 60 человек)</div>
+                    <button class="service-button" data-service="photo">Выбрать</button>
+                </div>
+                <div class="place">
+                    <img src="images/place3.png" alt="" style="margin-top: -60px;">
+                    <div class="name">«Пиццерия Антонио»</div>
+                    <button class="service-button" data-service="cake">Выбрать</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="organize-button-container">
+        <button id="organize-button">Организовать</button>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-left">
+            <img src="images/logo_grey.png" alt="">
+        </div>
+    <div class="footer-container">
+        <div class="footer-right">
+            <div class="footer-info">
+                <p style="font-size: 0.7em;">Наш адрес:</p>
+                <p style="color: black; margin-top: 10px;"2>Москва, проспект Андропова, д.1</p>
+            </div>
+            <div class="footer-info">
+                <p style="font-size: 0.7em;">Телефон:</p>
+                <p style="color: black; margin-top: 10px;">+7 (495) 221-00-00</p>
+            </div>
+            <div class="footer-social">
+                <p>Мы в социальных сетях:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="images/vk.png" alt="VK"></a>
+                    <a href="#"><img src="images/tg.png" alt="Telegram"></a>
+                    <a href="#"><img src="images/tt.png" alt="TikTok"></a>
+                    <a href="#"><img src="images/yt.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Все права защищены</p>
+            <p>Настоящий веб-сайт с доменным именем dreamisland.ru является официальным сайтом Парка развлечений «Остров мечты» (далее – «Сайт»). Материалы, элементы и авторские работы, содержащиеся на Сайте, включая, без ограничения,
+                дизайн, текстовые материалы и изображения, если не указано иное, принадлежат компании АО ХК «Остров Мечты» и/или ООО «Парк Развлечений» и/или АО «РЕГИОНЫ-Энтертейнмент» и/или ООО «РЭ Ритейл» и не подлежат копированию,
+                воспроизведению, передаче, распространению, использованию, сдаче в аренду, сублицензированию, изменению, хранению для последующего использования целиком или частично в любом виде без письменного согласия со стороны
+                компании правообладателя. Некоторые изображения на Сайте используются по лицензии Sony Pictures Consumer Products Inc., VIMN Netherlands B.V. (Viacom Group), International Merchandising, Promotion and Services S.A. (IMPS S.A.), Sanrio
+                GmbH, Shutterstock, Inc.</p>
+        </div>
+    </div>
+</footer>
+    <script src="js/holiday.js"></script>
+</body>
+</html>
